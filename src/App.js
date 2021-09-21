@@ -26,11 +26,6 @@ function App() {
           <img class="eye right-eye" src={rightEye} />
         </Grid>
       </Grid>
-
-        {
-        //* Sign up form 
-        }
-
         
         {/* <Grid container spacing={1} class="potato">
           <Grid item sm={12}>
