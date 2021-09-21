@@ -2,6 +2,8 @@ import { Grid, TextField, Button } from '@mui/material';
 import React, { useState } from 'react'
 import leftEye from './left-eye.svg';
 import rightEye from './right-eye.svg';
+import { SignUpForm } from './signUp';
+
 import './App.css';
 
 function App() {
@@ -14,36 +16,22 @@ function App() {
     }))
   }
 
+  const teste = () => {
+    console.log('aaaaaaa')
+  }
 
   return (
 
     <div>
-      <Grid container spacing={1} class="potato">
-        <Grid item sm={4}>
-          <img class="eye left-eye" src={leftEye} />
+      <Grid container spacing={1}>
+        <Grid item sm={6} onClick={teste}>
+          <img class="eye left-eye" src={leftEye}/>
+          {/* <span>teste</span> */}
         </Grid>
-        <Grid item sm={4}>
+        <Grid item sm={6}>
           <img class="eye right-eye" src={rightEye} />
         </Grid>
       </Grid>
-        
-        {/* <Grid container spacing={1} class="potato">
-          <Grid item sm={12}>
-            <TextField name="username" label="Username" variant="standard" onChange={onChange} fullWidth />
-          </Grid>
-          <Grid item sm={12}>
-            <TextField name="password" label="Password" type="password" variant="standard" onChange={onChange} fullWidth />
-          </Grid>
-          <Grid item sm={12}>
-            <TextField name="email" label="E-mail" variant="standard" onChange={onChange} fullWidth />
-          </Grid>
-          <Grid item sm={12}>
-          </Grid>
-          <Grid item sm={12} sx={{ 'padding-top': '3vh' }} >
-            <Button variant="" fullWidth
-              disabled={!formData.username || !formData.password || !formData.email}>Sign In</Button>
-          </Grid>
-        </Grid> */}
       </div>
   );
 }

@@ -14,8 +14,8 @@ body {
 .eye {
   filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0) brightness(100%) contrast(100%) blur(5px);
   transition: 0.5s;
-  height: 25vh;
-  width: 25vw;
+  height: 20vh;
+  width: 20vw;
 }
 
 .left-eye:hover {
@@ -36,4 +36,9 @@ body {
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: 101%; */
+}
+
+.test {
+  display: flex;
+  justify-content: center;
 }
