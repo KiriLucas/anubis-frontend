@@ -1,5 +1,5 @@
 import { Grid, TextField, Button } from '@mui/material';
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
@@ -9,7 +9,7 @@ import './App.css';
 
 function SignUpForm(props) {
   const [formData, setFormData] = useState({})
-  const [open, setOpen] = React.useState(props.renderLoginModal);
+  const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -26,11 +26,16 @@ function SignUpForm(props) {
     }))
   }
 
+  useEffect(() => { 
+    setOpen(props.potato)
+    console.log(open)
+  })
+
   return (
+
     <div>
       <Dialog
         open={open}
-        onClose={handleClose}
       >
         <DialogTitle>Create new account</DialogTitle>
         <DialogContent>

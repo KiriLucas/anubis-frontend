@@ -7,30 +7,24 @@ import SignUpForm from './signUp.js';
 import './App.css';
 
 function App() {
-  const [formData, setFormData] = useState({})
   const [renderLoginModal, setRenderLoginModal] = useState(false)
-
-  const onChange = ({ target: { name, value } }) => {
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }))
-  }
 
   const onClick = () => {
     setRenderLoginModal(true)
   }
 
+
   return (
     <div>
-      <SignUpForm renderLoginModal={onClick}/>
+      <SignUpForm potato={renderLoginModal}/>
       <Grid container spacing={1}>
         <Grid item sm={6} onClick={onClick}>
           <img class="eye left-eye" src={leftEye}/>
-          {/* <span>teste</span> */}
+          <span class="test"><b>NEW ACCOUNT</b></span>
         </Grid>
         <Grid item sm={6}>
           <img class="eye right-eye" src={rightEye} />
+          <span class="test"><b>LOG IN</b></span>
         </Grid>
       </Grid>
       </div>
