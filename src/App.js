@@ -4,7 +4,8 @@ import leftEye from './left-eye.svg';
 import rightEye from './right-eye.svg';
 import SignUpForm from './signUp.js';
 
-import './App.css';
+import './Main.css';
+import './Fog.css';
 
 function App() {
   const [renderLoginModal, setRenderLoginModal] = useState(false)
@@ -15,7 +16,7 @@ function App() {
 
   return (
     <div>
-      <div id="foglayer_01" class="fog">
+      <div class="fog">
         <div class="image01"></div>
         <div class="image02"></div>
       </div>

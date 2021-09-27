@@ -1,0 +1,55 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: #090a0c;
+  background: linear-gradient(0deg, rgb(38, 25, 51) 25%, 90%,rgb(17, 14, 17));
+  color: white;
+  justify-content: center;
+  /* align-items: center; */
+  display: flex;
+  /* background-image: url(./blood.svg);   */
+  /* background-position: top;
+  background-repeat: no-repeat; */
+  overflow: hidden;
+}
+
+.eye {
+  filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0) brightness(100%) contrast(100%) blur(5px);
+  transition: 0.5s;
+  height: 20vh;
+  width: 20vw;
+}
+
+.left-eye:hover {
+  height: 20vh;
+  width: 20vw;
+  filter: invert(47%) sepia(81%) saturate(378%) hue-rotate(10deg) brightness(194%) contrast(95%) blur(.5px);
+}
+
+.right-eye:hover {
+  height: 20vh;
+  width: 20vw;
+  filter: invert(47%) sepia(81%) saturate(378%) hue-rotate(10deg) brightness(194%) contrast(95%) blur(.5px);
+}
+
+.container{
+  padding: 1rem;
+  background-color: #ececec;
+  border: 0;
+  border-radius: 5px;  
+  box-shadow: 0px 0px 15px #4c5058;
+  /* background-image: url(./wave.svg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 101%; */
+}
+
+.test {
+  display: flex;
+  justify-content: center;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
