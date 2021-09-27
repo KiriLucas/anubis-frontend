@@ -13,10 +13,21 @@ function App() {
     setRenderLoginModal(true)
   }
 
-
   return (
     <div>
-      <SignUpForm potato={renderLoginModal}/>
+      <div id="foglayer_01" class="fog">
+        <div class="image01"></div>
+        <div class="image02"></div>
+      </div>
+      <div id="foglayer_02" class="fog">
+        <div class="image01"></div>
+        <div class="image02"></div>
+      </div>
+      <div id="foglayer_03" class="fog">
+        <div class="image01"></div>
+        <div class="image02"></div>
+      </div>
+      <SignUpForm onCancel={() => setRenderLoginModal(false)} renderLoginModal={renderLoginModal}/>
       <Grid container spacing={1}>
         <Grid item sm={6} onClick={onClick}>
           <img class="eye left-eye" src={leftEye}/>

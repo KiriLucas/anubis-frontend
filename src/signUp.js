@@ -9,14 +9,9 @@ import './App.css';
 
 function SignUpForm(props) {
   const [formData, setFormData] = useState({})
-  const [open, setOpen] = React.useState(false);
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
 
   const handleClose = () => {
-    setOpen(false);
+    props.onCancel()
   };
 
   const handleChange = ({ target: { name, value } }) => {
@@ -26,32 +21,33 @@ function SignUpForm(props) {
     }))
   }
 
-  useEffect(() => { 
-    setOpen(props.potato)
-    console.log(open)
-  })
-
   return (
 
     <div>
       <Dialog
-        open={open}
+        open={props.renderLoginModal}
+        maxWidth={'md'}
       >
         <DialogTitle>Create new account</DialogTitle>
         <DialogContent>
-          {/* <DialogContentText>
-            To subscribe to this website, please enter your email address here. We
-            will send updates occasionally.
-          </DialogContentText> */}
+          <DialogContentText>
+            {/* Create a new Anubis account in order to be able to play */}
+          </DialogContentText>
           <Grid item sm={12}>
-            <TextField name="username" label="Username" variant="standard" onChange={handleChange} fullWidth />
+            <TextField name="name" label="Name" variant="standard" onChange={handleChange} required fullWidth />
           </Grid>
           <Grid item sm={12}>
-            <TextField name="password" label="Password" type="password" variant="standard" onChange={handleChange} fullWidth />
+            <TextField name="username" label="Username" variant="standard" onChange={handleChange} required fullWidth />
           </Grid>
           <Grid item sm={12}>
-            <TextField name="email" label="E-mail" variant="standard" onChange={handleChange} fullWidth />
+            <TextField name="password" label="Password" type="password" variant="standard" onChange={handleChange} required fullWidth />
           </Grid>
+          <Grid item sm={12}>
+            <TextField name="email" label="E-mail" variant="standard" onChange={handleChange} required fullWidth />
+          </Grid>
+          <DialogContentText>
+            * required fields
+          </DialogContentText>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
