@@ -16,7 +16,7 @@ function App() {
 
   return (
     <div>
-      <div class="fog">
+      <div id="foglayer_01" class="fog">
         <div class="image01"></div>
         <div class="image02"></div>
       </div>
@@ -28,10 +28,10 @@ function App() {
         <div class="image01"></div>
         <div class="image02"></div>
       </div>
-      <SignUpForm onCancel={() => setRenderLoginModal(false)} renderLoginModal={renderLoginModal}/>
-      <Grid container spacing={1}>
+      <Grid container spacing={2}>
+      <SignUpForm onCancel={() => setRenderLoginModal(false)} renderLoginModal={renderLoginModal} />
         <Grid item sm={6} onClick={onClick}>
-          <img class="eye left-eye" src={leftEye}/>
+          <img class="eye left-eye" src={leftEye} />
           <span class="test"><b>NEW ACCOUNT</b></span>
         </Grid>
         <Grid item sm={6}>
@@ -39,7 +39,7 @@ function App() {
           <span class="test"><b>LOG IN</b></span>
         </Grid>
       </Grid>
-      </div>
+    </div>
   );
 }
 
