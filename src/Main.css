@@ -1,14 +1,14 @@
 body {
   height: 100vh;
   width: 100vw;
-  background-color: #090a0c;
-  background: linear-gradient(0deg, rgb(38, 25, 51) 25%, 90%,rgb(17, 14, 17));
+  background-color: #0b0c0e;
   color: white;
   justify-content: center;
   /* align-items: center; */
   display: flex;
-  /* background-image: url(./blood.svg);   */
-  /* background-position: top;
+  background-image: linear-gradient(to right top, #040506, #0a0a0b, #0f0f0f, #131313, #161616);
+  /* background-image: url(./blood.svg);
+  background-position: top;
   background-repeat: no-repeat; */
   overflow: hidden;
 }
@@ -19,18 +19,6 @@ body {
   transition: 0.5s;
   height: 20vh;
   width: 20vw;
-}
-
-.left-eye:hover {
-  height: 20vh;
-  width: 20vw;
-  filter: invert(47%) sepia(81%) saturate(378%) hue-rotate(10deg) brightness(194%) contrast(95%) blur(.5px);
-}
-
-.right-eye:hover {
-  height: 20vh;
-  width: 20vw;
-  filter: invert(47%) sepia(81%) saturate(378%) hue-rotate(10deg) brightness(194%) contrast(95%) blur(.5px);
 }
 
 .container{

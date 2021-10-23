@@ -25,7 +25,7 @@ function SignUpForm(props) {
 
     <div>
       <Dialog
-        open={props.renderLoginModal}
+        open={props.renderNewAccountModal}
         maxWidth={'md'}
       >
         <DialogTitle>Create new account</DialogTitle>
