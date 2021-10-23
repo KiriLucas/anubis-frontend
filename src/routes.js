@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Route, BrowserRouter, Switch, Redirect } from "react-router-dom";
+import { Route, BrowserRouter, Switch } from "react-router-dom";
 import Dashboard from "./Dashboard";
 import { useHistory } from 'react-router-dom'
 
@@ -11,7 +11,7 @@ const ProtectedRoute = ({ children }) => {
     useEffect(() => {
         const token = localStorage.getItem('token')
         if (!token) history.push('/')
-    }, [])
+    }, [history])
 
     return children
 }

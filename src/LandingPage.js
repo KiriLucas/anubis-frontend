@@ -1,39 +1,35 @@
 import { Grid } from '@mui/material';
-import React, { useState } from 'react'
-import leftEye from './left-eye.svg';
-import rightEye from './right-eye.svg';
-import SignUpForm from './signUp.js';
+import React from 'react'
 import LoginForm from './signIn.js';
 
 import './Main.css';
 
-function LandingPage() {
-  const [renderNewAccountModal, setRenderNewAccountModal] = useState(false)
-  const [renderLoginModal, setRenderLoginModal] = useState(false)
+const LandingPage = () => {
 
-  const onClickNewAccount = () => {
-    setRenderNewAccountModal(true)
-  }
-
-  const onClickLogIn = () => {
-    setRenderLoginModal(true)
+  const paperStyle = {
+    backgroundColor: '#fafafa',
+    color: 'black',
+    padding: 20,
+    height: '35vh',
+    width: '50%',
+    marginTop: '10vh',
+    marginRight: 'auto',
+    marginLeft: 'auto',
+    marginBottom: '10vh',
   }
 
   return (
-    <div>
-      <Grid container spacing={2}>
-      <SignUpForm onCancel={() => setRenderNewAccountModal(false)} renderNewAccountModal={renderNewAccountModal} />
-      <LoginForm onCancel={() => setRenderLoginModal(false)} renderLoginModal={renderLoginModal} />
-        <Grid item sm={6} onClick={onClickNewAccount}>
-          <img class="eye left-eye" src={leftEye} />
-          <span class="test"><b>NEW ACCOUNT</b></span>
+
+      <Grid container style={paperStyle}>
+        <Grid item xs={6}>
+          <LoginForm />
         </Grid>
-        <Grid item sm={6} onClick={onClickLogIn}>
-          <img class="eye right-eye" src={rightEye} />
-          <span class="test"><b>LOG IN</b></span>
+        <Grid item xs={6}>
+          
         </Grid>
       </Grid>
-    </div>
+
+
   );
 }
 
