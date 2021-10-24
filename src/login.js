@@ -1,12 +1,11 @@
-import { Grid, TextField, Button, Avatar, Link } from '@mui/material';
-import Typography from '@mui/material/Typography';
 import React, { useState } from 'react'
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { useHistory } from 'react-router';
 import axios from 'axios';
-import './Main.css';
-import 'react-toastify/dist/ReactToastify.css';
+import { Grid, TextField, Button, Avatar } from '@mui/material';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import './Main.css';
 
 function LoginForm() {
   const history = useHistory()
@@ -27,8 +26,8 @@ function LoginForm() {
       console.log(data)
       localStorage.setItem('token', JSON.stringify(data))
       history.push('/dashboard')
-
     }).catch(() => {
+      setValues({username: values.username, password: ''})
       toast.error("Something went wrong!", {theme: "dark"})
     })
   }
@@ -37,9 +36,6 @@ function LoginForm() {
     avatar: {
       backgroundColor: '#3f51b5',
     },
-    fields: {
-      marginBottom: '1vh'
-    }
   }
 
   return (
@@ -55,24 +51,27 @@ function LoginForm() {
       draggable
       pauseOnHover
       />
-      <Grid align='center'>
+      <Grid container spacing={1}>
+      <Grid item xs={12} align='center'>
         <Avatar style={setStyles.avatar}><LockOutlinedIcon /></Avatar>
         <h2>Log In</h2>
       </Grid>
 
+      <Grid item xs={12}>
       <TextField required
         id='username'
-        style={setStyles.fields}
         label='Username'
         variant='standard'
         value={values.username}
         onChange={handleChange('username')}
+        autoFocus
         fullWidth
       />
+      </Grid>
 
+      <Grid item xs={12} >
       <TextField required
         id='password'
-        style={setStyles.fields}
         label='Password'
         variant='standard'
         value={values.password}
@@ -92,8 +91,12 @@ function LoginForm() {
         // }}
         fullWidth
       />
+      </Grid>
+      <Grid item xs={12} >
       <Button variant="contained" disableElevation disabled={!values.username || !values.password} onClick={handleSubmit} fullWidth>Login</Button>
-      <Typography> <Link href='#'> Forgot your password? </Link></Typography>
+      </Grid>
+      </Grid>
+
     </div>
   );
 }
