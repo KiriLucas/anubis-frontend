@@ -3,7 +3,7 @@ import { useHistory } from 'react-router';
 import axios from 'axios';
 import { Grid, TextField, Button, Avatar } from '@mui/material';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './Main.css';
 
@@ -40,23 +40,18 @@ const NewAccountForm = () => {
   
   const setStyles = {
     avatar: {
-      backgroundColor: '#3f51b5',
+      backgroundColor: '#1c1c1c',
     },
+    fields: {
+      marginTop: '0.8%'
+    },
+    button: {
+      marginTop: '1em'
+    }
 }
 
   return (
     <div>
-      <ToastContainer
-      position="top-center"
-      autoClose={5000}
-      hideProgressBar={false}
-      newestOnTop={false}
-      closeOnClick
-      rtl={false}
-      pauseOnFocusLoss
-      draggable
-      pauseOnHover
-      />
       <Grid container spacing={1}>
       <Grid item xs={12} align='center'>
         <Avatar style={setStyles.avatar}><AddCircleOutlineIcon /></Avatar>
@@ -67,7 +62,7 @@ const NewAccountForm = () => {
           <TextField
             id='fullName'
             label='Name'
-            variant='standard'
+            variant='outlined'
             value={formData.firstName}
             onChange={handleChange('firstName')}
             fullWidth
@@ -78,7 +73,7 @@ const NewAccountForm = () => {
           <TextField required
             id='username'
             label='Username'
-            variant='standard'
+            variant='outlined'
             value={formData.username}
             onChange={handleChange('username')}
             fullWidth
@@ -89,9 +84,10 @@ const NewAccountForm = () => {
           <TextField required
             id='email'
             label='Email'
-            variant='standard'
+            variant='outlined'
             value={formData.email}
             onChange={handleChange('email')}
+            style={setStyles.fields}
             fullWidth
           />
         </Grid>
@@ -100,15 +96,17 @@ const NewAccountForm = () => {
       <TextField required
         id='password'
         label='Password'
-        variant='standard'
+        variant='outlined'
         value={formData.password}
         onChange={handleChange('password')}
+        style={setStyles.fields}
         type={params.showPassword ? 'text' : 'password'}
         fullWidth
       />
       </Grid>
       <Grid item xs={12}>
-      <Button variant="contained" disableElevation onClick={handleSubmit} fullWidth>Create new account</Button>
+      <Button style={setStyles.button} variant="contained" disableElevation onClick={handleSubmit} fullWidth>Create new account</Button>
+      
       </Grid>
       </Grid>
     </div>
