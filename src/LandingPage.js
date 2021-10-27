@@ -28,7 +28,7 @@ const LandingPage = () => {
   }
 
   const itemStyle = {
-    padding: '10px'
+    padding: '1%'
   }
 
   const toastComponent = () => {
@@ -48,8 +48,8 @@ const LandingPage = () => {
   return (
     <Grid>
       {toastComponent()}
-
       <Grid container style={paperStyle} spacing={2}>
+
         <Grid item xs={5} style={itemStyle}>
           <LoginForm />
         </Grid>
@@ -63,7 +63,6 @@ const LandingPage = () => {
         </Grid>
 
       </Grid>
-
     </Grid>
   )
 }

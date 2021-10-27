@@ -91,12 +91,13 @@ function LoginForm() {
             fullWidth
           />
         </Grid>
-        
+
         <Grid item xs={12}>
           <Button style={setStyles.button} variant="contained" disableElevation disabled={!values.username || !values.password} onClick={handleSubmit} fullWidth endIcon={<LockOpenIcon />}>Login</Button>
         </Grid>
 
-      </Grid></Container>
+      </Grid>
+    </Container>
   );
 }
 
